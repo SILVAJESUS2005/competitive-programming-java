@@ -26,6 +26,7 @@ public class PlantillaFastReaderIO {
         int t = 1;
         if (hasMoreTokens()) { //Opcional: solo si el problema especifica 't' casos.
             // t = nextInt();
+
         }
 
         while (t-- > 0) {
@@ -60,7 +61,7 @@ public class PlantillaFastReaderIO {
 
     static String next() {
         // StringTokenizer divide la línea en "tokens" ignorando los espacios en blanco.
-        while(st == null || !st.hasMoreElements()) {
+        while(st == null || !st.hasMoreTokens()) {
             try {
                 String line = br.readLine();
                 if (line == null) return null; // Fin del archivo (EOF)

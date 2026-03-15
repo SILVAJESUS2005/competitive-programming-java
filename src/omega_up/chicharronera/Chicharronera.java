@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class Chicharronera {
     static BufferedReader br;
     static StringTokenizer st;
     static PrintWriter out;
@@ -15,19 +15,27 @@ public class Main {
         out.flush();
         out.close();
     }
-
     static void solve() {
-        int n = nextInt();
-        double suma = 0;
-        for (int i = 0; i < n; i++) {
-            suma +=  nextDouble();
-        }
-        out.println(suma/n);
+
+        double A = nextInt();
+        double B = nextInt();
+        double C = nextInt();
+
+        double D = B * B - 4 * A * C;
+
+        double x1 = (-B + Math.sqrt(D)) / (2 * A);
+        double x2 = (-B - Math.sqrt(D)) / (2 * A);
+    out.print(x1 + " " + x2);
     }
+
     static String next() {
         while (st == null || !st.hasMoreTokens()) {
             try {
-                st = new StringTokenizer(br.readLine());
+                String line = br.readLine();
+                if (line == null) {
+                    return null;
+                }
+                st = new StringTokenizer(line);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -38,8 +46,4 @@ public class Main {
     static int nextInt() {
         return Integer.parseInt(next());
     }
-    static double nextDouble() {
-        return Double.parseDouble(next());
-    }
-
 }

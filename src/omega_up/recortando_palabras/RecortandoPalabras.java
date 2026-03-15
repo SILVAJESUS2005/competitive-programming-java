@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class RecortandoPalabras {
     static BufferedReader br;
     static StringTokenizer st;
     static PrintWriter out;
@@ -17,13 +17,16 @@ public class Main {
     }
 
     static void solve() {
-        int n = nextInt();
-        double suma = 0;
-        for (int i = 0; i < n; i++) {
-            suma +=  nextDouble();
-        }
-        out.println(suma/n);
+    String p = next();
+    int n = nextInt();
+
+    String inicio = p.substring(0, n);
+
+    String fin = p.substring(p.length() - n );
+
+    out.println(inicio + fin);
     }
+
     static String next() {
         while (st == null || !st.hasMoreTokens()) {
             try {
@@ -34,12 +37,7 @@ public class Main {
         }
         return st.nextToken();
     }
-
     static int nextInt() {
         return Integer.parseInt(next());
     }
-    static double nextDouble() {
-        return Double.parseDouble(next());
-    }
-
 }

@@ -1,10 +1,10 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class Watermelon {
     static BufferedReader br;
-    static StringTokenizer st;
     static PrintWriter out;
+    static StringTokenizer st;
 
     public static void main(String[] args) {
         br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,28 +18,26 @@ public class Main {
 
     static void solve() {
         int n = nextInt();
-        double suma = 0;
-        for (int i = 0; i < n; i++) {
-            suma +=  nextDouble();
+        if(n % 2 == 0 && n > 2){
+            out.println("SI");
+        } else {
+            out.println("NO");
         }
-        out.println(suma/n);
     }
     static String next() {
         while (st == null || !st.hasMoreTokens()) {
             try {
-                st = new StringTokenizer(br.readLine());
+                String line = br.readLine();
+                if (line == null) return null;
+                st = new StringTokenizer(line);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         return st.nextToken();
     }
-
     static int nextInt() {
         return Integer.parseInt(next());
-    }
-    static double nextDouble() {
-        return Double.parseDouble(next());
     }
 
 }
