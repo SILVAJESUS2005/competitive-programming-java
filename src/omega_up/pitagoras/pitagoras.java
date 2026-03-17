@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class pitagoras {
     static BufferedReader br;
     static StringTokenizer st;
     static PrintWriter out;
@@ -17,8 +17,16 @@ public class Main {
     }
 
     static void solve() {
-
+        double a, b;
+        a = nextDouble();
+        b = nextDouble();
+        out.printf("%.3f", hipotenusaTriangulo(a, b));
     }
+
+    static double hipotenusaTriangulo(double a, double b) {
+        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+    }
+
     static String next() {
         while (st == null || !st.hasMoreTokens()) {
             try {

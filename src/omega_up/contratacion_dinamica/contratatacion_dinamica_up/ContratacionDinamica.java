@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class ContratacionDinamica {
     static BufferedReader br;
     static StringTokenizer st;
     static PrintWriter out;
@@ -17,12 +17,32 @@ public class Main {
     }
 
     static void solve() {
+     int n = nextInt();
+     int k = nextInt();
+     int [] array = new int [n];
+
+     for (int i = 0; i < n; i++) {
+         array[i] = nextInt();
+     }
+
+     for (int i = 0; i <= n - k; i++) {
+        int max = array[i];
+        for (int j = 1; j < k; j++) {
+            if(array[i + j] > max) {
+                max = array[i + j];
+            }
+        }
+        out.print(max + " ");
+     }
 
     }
+
     static String next() {
-        while (st == null || !st.hasMoreTokens()) {
+        while (st == null || !st.hasMoreElements()) {
             try {
-                st = new StringTokenizer(br.readLine());
+                String line = br.readLine();
+                if (line == null) return null;
+                st = new StringTokenizer(line);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -31,10 +51,8 @@ public class Main {
     }
 
     static int nextInt() {
+
         return Integer.parseInt(next());
-    }
-    static double nextDouble() {
-        return Double.parseDouble(next());
     }
 
 }
