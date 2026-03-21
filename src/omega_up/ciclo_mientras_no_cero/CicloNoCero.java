@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class CicloNoCero {
     static BufferedReader br;
     static StringTokenizer st;
     static PrintWriter out;
@@ -17,24 +17,26 @@ public class Main {
     }
 
     static void solve() {
-      int n = nextInt();
-      int suma = 0;
-      while(n != 0) {
-          suma += n;
-      }
-      out.println(suma);
+        int n = nextInt();
+        int suma = 0;
+        while(n != 0) {
+            suma += n;
+            n = nextInt();
+        }
+        out.println(suma);
     }
     static String next() {
         while (st == null || !st.hasMoreTokens()) {
             try {
-                st = new StringTokenizer(br.readLine());
+                String line = br.readLine();
+                if(line == null) return null;
+                st = new StringTokenizer(line);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         return st.nextToken();
     }
-
     static int nextInt() {
         return Integer.parseInt(next());
     }
