@@ -1,11 +1,10 @@
 import java.util.*;
 import java.io.*;
 
-public class AreaCirculo {
-
+public class EmparejandoEntrenamiento {
     static BufferedReader br;
-    static PrintWriter out;
     static StringTokenizer st;
+    static PrintWriter out;
 
     public static void main(String[] args) {
         br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,13 +14,6 @@ public class AreaCirculo {
 
         out.flush();
         out.close();
-    }
-
-    static void solve(){
-    int r = nextInt();
-
-    double areaC = Math.PI * (r * r);
-    out.printf("%.2f", areaC);
     }
     static String next(){
         while(st == null || !st.hasMoreTokens()) {
@@ -34,4 +26,24 @@ public class AreaCirculo {
         }
         return st.nextToken();
     }
-}
+
+    static void solve(){
+        int a = nextInt();
+        int b = nextInt();
+        int c = nextInt();
+        int d = nextInt();
+
+        int res = Integer.MAX_VALUE;
+
+        res = Math.min(res, Math.abs((a + b) - (c + d)));
+        res = Math.min(res, Math.abs((a + c) - (b + d)));
+        res = Math.min(res, Math.abs((a + d) - (b + c)));
+
+        System.out.println(res);
+    }
+
+    static int nextInt(){
+        return Integer.parseInt(next());
+    }
+
+    }
